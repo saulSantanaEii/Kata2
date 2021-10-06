@@ -12,7 +12,7 @@ public class main {
     
     public static void main(String[] args){
         
-        int[] data= {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
+        Integer[] data= {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
         
         Histogram histo = new Histogram(data);
         
@@ -25,18 +25,18 @@ public class main {
     
 }
 
-class Histogram{
-    private final int[] data;
+class Histogram<T>{
+    private final T[] data;
     
-    public Histogram(int[] data){
+    public Histogram(T[] data){
         this.data = data;
     }
-    public int[] getData(){return this.data;}
+    public T[] getData(){return this.data;}
     
     public Map getHistogram(){
-        Map<Integer, Integer> histogram = new HashMap<>();
+        HashMap<T, Integer> histogram = new HashMap<>();
         
-        for (int key : data) {
+        for (T key : data) {
             
             histogram.put(key, histogram.containsKey(key) ? histogram.get(key) + 1 : 1);
             
