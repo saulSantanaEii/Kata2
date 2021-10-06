@@ -12,13 +12,13 @@ public class main {
     
     public static void main(String[] args){
         
-        Integer[] data= {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
+        String[] data= {"En","un","Lugar","de","la","Ulpgc"};
         
-        Histogram histo = new Histogram(data);
+        Histogram<String> histo = new Histogram(data);
         
-        Map<Integer,Integer> histogr = histo.getHistogram();
+        Map<String,Integer> histogr = histo.getHistogram();
         
-        for (Integer key: histogr.keySet()){
+        for (String key: histogr.keySet()){
             System.out.println(key + "==>" + histogr.get(key));
         }
     }
